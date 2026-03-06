@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contacto | Hablemos de Proyectos{% endblock %}
+
+{% block extra_css %}
+<style>
+    .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .form-control:focus {
+        border-color: #212529;
+        box-shadow: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="contact-container">
+        <h2 class="text-center fw-bold mb-4">Enviar un mensaje</h2>
+        <form id="contactForm" method="POST" action="">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" name="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mensaje</label>
+                <textarea name="mensaje" class="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 py-2 shadow">Enviar Mensaje</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Pequeña validación de QA en el cliente
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        console.log("Validando envío de formulario...");
+        // Aquí podrías añadir lógica extra antes del submit
+    });
+</script>
+{% endblock %}

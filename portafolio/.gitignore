@@ -1,0 +1,42 @@
+# === SEGURIDAD (SECRETOS) ===
+.env
+*.env
+secrets.json
+
+# === ENTORNOS VIRTUALES ===
+contenedor/
+venv/
+env/
+ENV/
+.venv/
+bin/
+lib/
+include/
+
+# === DJANGO Y PYTHON ===
+__pycache__/
+*.py[cod]
+*$py.class
+db.sqlite3
+db.sqlite3-journal
+media/
+static_root/
+staticfiles/
+
+# === DOCKER ===
+.docker/
+# No ignoramos docker-compose.yml porque es parte de la arquitectura, 
+# pero sí cualquier data persistente si la sacas del contenedor
+data/db/
+
+# === SISTEMA OPERATIVO Y EDITORES ===
+.vscode/
+.idea/
+.ds_store
+Thumbs.db
+desktop.ini
+
+# === LOGS Y TEMPORALES ===
+*.log
+tmp/
+*.swp

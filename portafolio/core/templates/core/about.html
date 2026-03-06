@@ -1,0 +1,83 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Sobre mí | Perfil Profesional{% endblock %}
+
+{% block extra_css %}
+<style>
+    .profile-card {
+        border: none;
+        border-radius: 20px;
+        background: #ffffff;
+    }
+    .skill-badge {
+        transition: all 0.3s ease;
+        cursor: default;
+        border: 1px solid #dee2e6;
+        font-size: 0.9rem;
+    }
+    .skill-badge:hover {
+        background-color: #212529;
+        color: white;
+        transform: translateY(-3px);
+    }
+    .section-title {
+        border-left: 5px solid #212529;
+        padding-left: 15px;
+    }
+    .about-text {
+        line-height: 1.8;
+        text-align: justify;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row g-5">
+        <div class="col-lg-7">
+            <h2 class="fw-bold mb-4 section-title">Perfil Profesional</h2>
+            <div class="about-text text-muted">
+                <p>
+                    Soy un <strong>desarrollador Full Stack en formación</strong> con background en el área de salud y audiovisual, 
+                    lo que me ha permitido desarrollar una mirada multidisciplinaria orientada a la resolución de problemas 
+                    y al trabajo colaborativo.
+                </p>
+                <p>
+                    Cuento con experiencia laboral tanto en el ámbito tecnológico como hospitalario, lo que ha fortalecido 
+                    habilidades como la comunicación efectiva, la adaptabilidad y la gestión del trabajo en equipo.
+                </p>
+                <p>
+                    Actualmente me encuentro profundizando mis conocimientos en <strong>desarrollo de software y Quality Assurance (QA)</strong> 
+                    mediante diversas capacitaciones y el desarrollo de proyectos prácticos.
+                </p>
+                <p>
+                    Me caracterizo por mi proactividad, entusiasmo por el aprendizaje continuo y una alta motivación por 
+                    enfrentar nuevos desafíos dentro del área tecnológica, con especial interés en el <strong>desarrollo web y la calidad del software</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="card profile-card shadow-sm p-4">
+                <h3 class="fw-bold mb-4">Stack Tecnológico</h3>
+                <div class="d-flex flex-wrap gap-2 mb-4">
+                    <span class="badge rounded-pill bg-light text-dark p-3 skill-badge">Python / Django</span>
+                    <span class="badge rounded-pill bg-light text-dark p-3 skill-badge">PostgreSQL</span>
+                    <span class="badge rounded-pill bg-light text-dark p-3 skill-badge">Docker & Compose</span>
+                    <span class="badge rounded-pill bg-light text-dark p-3 skill-badge">QA Testing</span>
+                    <span class="badge rounded-pill bg-light text-dark p-3 skill-badge">Bootstrap 5</span>
+                    <span class="badge rounded-pill bg-light text-dark p-3 skill-badge">Git / GitHub</span>
+                </div>
+                
+                <h3 class="fw-bold mb-3">Soft Skills</h3>
+                <ul class="list-unstyled text-muted">
+                    <li><i class="bi bi-check2-circle text-dark me-2"></i> Comunicación Efectiva</li>
+                    <li><i class="bi bi-check2-circle text-dark me-2"></i> Gestión de Equipo Hospitalario</li>
+                    <li><i class="bi bi-check2-circle text-dark me-2"></i> Resolución Multidisciplinaria</li>
+                    <li><i class="bi bi-check2-circle text-dark me-2"></i> Adaptabilidad Audiovisual</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Inicio | Desarrollador Full Stack | QA{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+    }
+    .profile-img-container img {
+        transition: all 0.5s ease;
+    }
+    .profile-img-container img:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-4">Desarrollador Web Full Stack | QA</h1>
+                <p class="lead mb-4">Construyendo aplicaciones escalables y garantizando la calidad de software con tecnologías modernas.</p>
+                <a href="{% url 'portafolio' %}" class="btn btn-dark btn-lg px-4 shadow">Ver mi trabajo</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="profile-img-container">
+                    <img src="https://github.com/yurilealjaque.png" 
+                         alt="Foto de Perfil" 
+                         class="img-fluid rounded-circle shadow-lg border border-5 border-white" 
+                         style="max-width: 350px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
