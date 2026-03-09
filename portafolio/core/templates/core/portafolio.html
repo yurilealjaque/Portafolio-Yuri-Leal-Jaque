@@ -1,17 +1,27 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="text-center mb-5">
     <h1 class="display-4 fw-bold">Mis Proyectos</h1>
-    <p class="lead text-muted">
+    <p class="lead text-muted mb-4">
         Explora los desarrollos realizados con arquitectura moderna.
     </p>
+
+    <div class="d-flex justify-content-center gap-3 mb-5">
+        <a href="{% static 'pdf/Cv_Yuri_Leal_QA_Desarrollador.pdf' %}" 
+           download="Cv_Yuri_Leal_QA_Desarrollador.pdf" 
+           class="btn btn-dark btn-lg px-4 shadow-sm">
+           <i class="bi bi-file-earmark-pdf-fill me-2"></i>Descargar CV (PDF)
+        </a>
+    
+    </div>
 </div>
 
 <div class="row g-4">
     {% for project in projects %}
     <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm">
+        <div class="card h-100 border-0 shadow-sm overflow-hidden" style="transition: transform 0.3s ease;">
             <a href="{% url 'project_detail' project.id %}">
                 <img src="{{ project.image.url }}" class="card-img-top"
                      alt="{{ project.title }}"
@@ -27,9 +37,9 @@
                 </p>
             </div>
 
-            <div class="card-footer bg-white border-0 pb-3">
+            <div class="card-footer bg-white border-0 pb-4">
                 <a href="{% url 'project_detail' project.id %}" 
-                   class="btn btn-outline-dark w-100">
+                   class="btn btn-outline-dark w-100 fw-bold">
                    Ver Detalles
                 </a>
             </div>
@@ -37,4 +47,14 @@
     </div>
     {% endfor %}
 </div>
+
+<style>
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .btn-dark {
+        background-color: #212529;
+        border: none;
+    }
+</style>
 {% endblock %}
