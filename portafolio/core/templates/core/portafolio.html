@@ -1,58 +1,40 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-
 <div class="text-center mb-5">
-
     <h1 class="display-4 fw-bold">Mis Proyectos</h1>
-
     <p class="lead text-muted">
         Explora los desarrollos realizados con arquitectura moderna.
     </p>
-
 </div>
 
 <div class="row g-4">
-
     {% for project in projects %}
-
     <div class="col-md-6 col-lg-4">
-
         <div class="card h-100 border-0 shadow-sm">
-
-            <img src="{{ project.image.url }}" class="card-img-top"
-                 alt="{{ project.title }}"
-                 style="height: 200px; object-fit: cover;">
+            <a href="{% url 'project_detail' project.id %}">
+                <img src="{{ project.image.url }}" class="card-img-top"
+                     alt="{{ project.title }}"
+                     style="height: 200px; object-fit: cover;">
+            </a>
 
             <div class="card-body">
-
                 <h5 class="card-title fw-bold">
                     {{ project.title }}
                 </h5>
-
                 <p class="card-text text-muted" style="font-size: 0.9rem;">
                     {{ project.description|truncatechars:120 }}
                 </p>
-
             </div>
 
             <div class="card-footer bg-white border-0 pb-3">
-
-                {% if project.link %}
-                    <a href="{{ project.link }}" target="_blank"
-                       class="btn btn-outline-dark w-100">
-                       Ver Detalles
-                    </a>
-                {% endif %}
-
+                <a href="{% url 'project_detail' project.id %}" 
+                   class="btn btn-outline-dark w-100">
+                   Ver Detalles
+                </a>
             </div>
-
         </div>
-
     </div>
-
     {% endfor %}
-
 </div>
-
 {% endblock %}

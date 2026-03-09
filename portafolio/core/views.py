@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect  # Agregamos redirect
 from .models import Project
 from .forms import ContactForm  # Importante: Importamos el formulario que creamos
+from django.views.generic import DetailView
+from .models import Project
 
 def home(request):
     return render(request, 'core/home.html')
@@ -25,3 +27,8 @@ def contact(request):
     
     # Cambié 'tu_app/contacto.html' por la ruta que usas en tu proyecto
     return render(request, 'core/contact.html', {'form': form})
+
+class ProjectDetailView(DetailView):
+    model = Project
+    template_name = 'core/project_detail.html'
+    context_object_name = 'proyecto' # Así lo llamaremos en el HTML

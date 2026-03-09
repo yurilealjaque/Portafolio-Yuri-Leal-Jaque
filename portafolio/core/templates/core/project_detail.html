@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb bg-transparent p-0">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-decoration-none text-muted">Inicio</a></li>
+            <li class="breadcrumb-item active fw-bold" aria-current="page">{{ proyecto.title }}</li>
+        </ol>
+    </nav>
+
+    <div class="row g-5">
+        <div class="col-lg-7">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="shadow-lg rounded-4 overflow-hidden border border-light">
+                    <img src="{{ proyecto.image.url }}" 
+                         class="img-fluid w-100 object-fit-cover" 
+                         alt="{{ proyecto.title }}"
+                         style="min-height: 400px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="ps-lg-4">
+                <span class="badge bg-primary-subtle text-primary mb-2 px-3 py-2 rounded-pill">Proyecto Destacado</span>
+                <h1 class="display-5 fw-bold mb-3">{{ proyecto.title }}</h1>
+                
+                <div class="d-flex align-items-center text-muted mb-4">
+                    <i class="bi bi-calendar3 me-2"></i>
+                    <span>Finalizado el {{ proyecto.created|date:"F Y" }}</span>
+                </div>
+
+                <hr class="my-4 opacity-10">
+
+                <section class="mb-5">
+                    <h4 class="fw-bold text-dark mb-3">Sobre el Proyecto</h4>
+                    <p class="lead text-secondary lh-lg" style="font-size: 1.1rem;">
+                        {{ proyecto.description|linebreaks }}
+                    </p>
+                </section>
+
+                <section class="mb-5">
+                    <h5 class="fw-bold mb-3">Stack Tecnológico</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge border text-dark fw-normal px-3 py-2">Python</span>
+                        <span class="badge border text-dark fw-normal px-3 py-2">Django</span>
+                        <span class="badge border text-dark fw-normal px-3 py-2">PostgreSQL</span>
+                        <span class="badge border text-dark fw-normal px-3 py-2">Docker</span>
+                    </div>
+                </section>
+
+                <div class="d-grid gap-3">
+                    {% if proyecto.link %}
+                        <a href="{{ proyecto.link }}" target="_blank" class="btn btn-dark btn-lg py-3 shadow-sm rounded-3">
+                            <i class="bi bi-github me-2"></i> Ver Repositorio en GitHub
+                        </a>
+                    {% endif %}
+                    
+                    <a href="{% url 'home' %}" class="btn btn-link text-muted text-decoration-none mt-2">
+                        <i class="bi bi-arrow-left me-2"></i> Volver a Proyectos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .breadcrumb-item + .breadcrumb-item::before { content: "→"; }
+    .object-fit-cover { transition: transform 0.5s ease; }
+    .object-fit-cover:hover { transform: scale(1.02); }
+</style>
+{% endblock %}
