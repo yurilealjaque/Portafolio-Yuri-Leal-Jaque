@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
-    path('home/', views.home, name='home'),
+    path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('portafolio/', views.portafolio, name='portafolio'),
     # Agregamos la barra diagonal al final de 'contact/' por consistencia en Django
