@@ -36,7 +36,15 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    'portafolio-yuri-leal-jaque.onrender.com', 
+    '.onrender.com', 
+    'localhost', 
+    '127.0.0.1'
+]
+
+
+
 
 # Application definition
 
@@ -128,7 +136,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'core', 'static'),
 ]
 
-# Carpeta donde se reunirán todos los estáticos para Vercel
+# Carpeta donde se reunirán todos los estáticos para 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Almacenamiento optimizado con WhiteNoise
