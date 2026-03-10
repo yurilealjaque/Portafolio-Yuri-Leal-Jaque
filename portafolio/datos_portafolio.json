@@ -1,0 +1,38 @@
+[
+{
+    "model": "core.project",
+    "pk": 2,
+    "fields": {
+        "title": "Portafolio Web con Arquitectura de Contenedores",
+        "description": "Desarrollo de una aplicación web profesional utilizando Django 5. Implementación de una arquitectura basada en microservicios mediante Docker para la gestión de una base de datos PostgreSQL, asegurando persistencia de datos y un entorno de desarrollo escalable.\r\nHabilidades clave: Django ORM, Docker Compose, PostgreSQL, y Diseño de Modelos.",
+        "image": "projects/potafoliao_proyecto.png",
+        "link": null,
+        "created": "2026-03-05T17:57:49.667Z",
+        "updated": "2026-03-05T20:41:45.213Z"
+    }
+},
+{
+    "model": "core.message",
+    "pk": 1,
+    "fields": {
+        "full_name": "yuri",
+        "email": "yurilealjaque2014@gmail.com",
+        "subject": "prueba 1",
+        "content": "quiero ver si funciona mi formulario, prueba 1",
+        "sent_at": "2026-03-09T00:11:05.980Z",
+        "is_read": false
+    }
+},
+{
+    "model": "core.message",
+    "pk": 2,
+    "fields": {
+        "full_name": "yuri ignacio",
+        "email": "yurilealjaque2014@gmail.com",
+        "subject": "prueba 2",
+        "content": "prueba 2",
+        "sent_at": "2026-03-09T22:42:05.053Z",
+        "is_read": false
+    }
+}
+]
